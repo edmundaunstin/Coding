@@ -22,6 +22,9 @@ for i in range(len(b)-1):
 		elif(b[i]=='R' and b[i+1]=='M'):
 			cx=cx+1
 			mat[cx][cy]=2
+		else:
+			cy=cy+1
+			mat[cx][cy]=3
 	elif(mat[cx][cy]==4):
 		if(b[i]=='R' and b[i+1]=='M'):
 			cx=cx-1
@@ -29,6 +32,9 @@ for i in range(len(b)-1):
 		elif(b[i]=='L' and b[i+1]=='M'):
 			cx=cx+1
 			mat[cx][cy]=2
+		else:
+			cy=cy-1
+			mat[cx][cy]=4
 	elif(mat[cx][cy]==1):
 		if(b[i]=='R' and b[i+1]=='M'):
 			cy=cy+1
@@ -36,6 +42,9 @@ for i in range(len(b)-1):
 		elif(b[i]=='L' and b[i+1]=='M'):
 			cy=cy-1
 			mat[cx][cy]=4
+		else:
+			cx=cx-1
+			mat[cx][cy]=1
 	elif(mat[cx][cy]==2):
 		if(b[i]=='L' and b[i+1]=='M'):
 			cy=cy+1
@@ -43,6 +52,9 @@ for i in range(len(b)-1):
 		elif(b[i]=='R' and b[i+1]=='M'):
 			cy=cy-1
 			mat[cx][cy]=4
+		else:
+			cy=cy-1
+			mat[cx][cy]=2
 			
 print(mat)
 if(mat[cx][cy]==1):
